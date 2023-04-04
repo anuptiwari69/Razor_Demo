@@ -29,11 +29,12 @@ public class LoginModel : PageModel
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == Username && u.Password == Password);
 
-        if (user == null)
+        if (user==null||user != user || user.Password != Password)
         {
             ErrorMessage = "Invalid username or password.";
             return Page();
         }
+     
 
         var claims = new[]
         {
