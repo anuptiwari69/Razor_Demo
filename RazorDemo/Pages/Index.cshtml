@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Welcome to RazorDemo</h1>
+<p>Login, Signup(Razor Pages)  </p>
+<p>Created Using Razor Syntax.</p>
+<p>SQL Server is used as database </p>
+<p>Privacy Page is for Authenticated users only</p>
+<p>Link Navigation Between  Pages </p>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <form method="post" asp-page-handler="Logout" class="form-inline">
+        <button type="submit" class="btn btn-link nav-link">Logout</button>
+    </form>
+}
+
+
